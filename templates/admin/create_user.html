@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<center><h1 class="p-3">Agregar administrador</h1></center>
+
+<div>
+    <center><button class="btn" style="background-color: black; color:aliceblue;">
+        <a class="nav-link" href="{{url_for('dashboard')}}">Volver al menu</a>
+    </button></center>
+</div>
+
+<div class="form-control">
+    <form action="/agregar_ad" class="container" method="POST">
+        <br>
+        <label class="form-control text-center" for="">Ingrese un nuevo Usuario</label>
+        <input class="form-control text-center mr-2" type="text" name="usuario" id="usuario" placeholder="Ingrese Usuario" required>
+        <br>
+        <label class="form-control text-center" for="">Ingrese una Contraseña:</label>
+        <input class="form-control text-center mr-2" type="password"  name="password" id="password" placeholder="Ingrese Contraseña" required>
+        <br>
+        <center><button class="btn text-center" style="background-color: black; color:aliceblue;" type="submit">Agregar</button></center>
+    </form>
+</div>
+
+{%if mensaje%}
+
+<div>
+    <center><h1>{{mensaje}}</h1></center>
+</div>
+{%endif%}
+{%endblock%}

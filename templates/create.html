@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+
+{%block title%}Agregar producto{%endblock%}
+
+
+{%block content%}
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bienvenido Hans Saldias</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('vista_agregar')}}">Agregar producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('vista_editar')}}">Editar producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('vista_borrar')}}">Eliminar producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('dashboard')}}">Menu administrador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('logout')}}">Salir</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Created by Hans Sadias</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<center><h1 class="p-3">Agregar produto</h1></center>
+<div>
+  <center><button class="btn" style="background-color: black; color:aliceblue;">
+      <a class="nav-link" href="{{url_for('dashboard')}}">Volver al menu</a>
+  </button></center>
+</div>
+<br>
+<div class="container">
+    <form action="/agregar" class="container" method="POST">
+        <label class="form-control text-center" for="">Modelo</label>
+        <input class="form-control text-center mr-2" type="text" name="modelo" id="modelo" placeholder="Ingrese modelo" required>
+        <br>
+        <label class="form-control text-center" for="">Marca</label>
+        <input class="form-control text-center mr-2" type="text"  name="marca" id="marca" placeholder="samsung etc" required>
+        <br>
+        <label class="form-control text-center" for="">repuesto</label>
+        <input class="form-control text-center mr-2" type="text"  name="repuesto" id="repuesto" placeholder="ingrese repuesto" required>
+        <br>
+        <label class="form-control text-center" for="">Precio</label>
+        <input class="form-control text-center mr-2" type="text"  name="precio" id="precio" placeholder="$45000" required>
+        <br>
+        <center><button class="btn text-center" style="background-color: black; color:white;" type="submit">Agregar</button></center>
+    </form>
+</div>
+
+{%if mensaje%}
+<div class="container p-5">
+    <center><h2>{{mensaje}}</h2></center>
+</div>
+{%endif%}
+{%endblock%}

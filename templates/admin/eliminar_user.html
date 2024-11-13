@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<center><h1 class="p-3">Eliminar administrador</h1></center>
+<center><button class="btn" style="background-color: black; color:aliceblue;">
+    <a class="nav-link" href="{{url_for('dashboard')}}">Volver al menu</a>
+</button></center>
+<div>
+    <form action="/eliminar_user" class="container" method="POST">
+        <br>
+        <label class="form-control text-center" for="">Ingrese el id del administrador:</label>
+        <input class="form-control text-center mr-2" type="password"  name="id_user" id="id_user" placeholder="Ingrese Contraseña" required>
+        <br>
+        <center><button class="btn text-center" style="background-color: black; color:aliceblue;" type="submit">Eliminar</button></center>
+    </form>
+</div>
+
+{%if mensaje%}
+
+<div>
+    <center><h1>{{mensaje}}</h1></center>
+</div>
+{%endif%}
+{%endblock%}

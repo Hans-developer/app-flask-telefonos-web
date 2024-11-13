@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div>
+    <center><h1 class="p-4">Editar administrador</h1></center>
+
+    <center><button class="btn" style="background-color: black; color:aliceblue;">
+        <a class="nav-link" href="{{url_for('dashboard')}}">Volver al menu</a>
+    </button></center>
+    <br class="p-3">
+
+    <form action="/editar_user" class="container" method="POST">
+        <label class="form-control text-center" for="">Ingrese el id del administrador:</label>
+        <input class="form-control text-center" type="password"  name="id_user" id="id_user" placeholder="Ingrese Contraseña" required>
+        <br>
+        <label class="form-control text-center" for="">Ingrese un nuevo Usuario</label>
+        <input class="form-control text-center" type="text" name="usuario" id="usuario" placeholder="Ingrese Usuario" required>
+        <br>
+        <label class="form-control text-center" for="">Ingrese una nueva Contraseña:</label>
+        <input class="form-control text-center" type="password"  name="password" id="password" placeholder="Ingrese Contraseña" required>
+        <br>
+        <center><button class="btn text-center" style="background-color: black; color:aliceblue" type="submit">Actualizar</button></center>
+    </form>
+</div>
+
+{%if mensaje%}
+
+<div>
+    <center><h1>{{mensaje}}</h1></center>
+</div>
+{%endif%}
+{%endblock%}

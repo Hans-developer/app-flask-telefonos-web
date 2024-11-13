@@ -1,0 +1,35 @@
+
+
+*{
+    background-color: black;
+    color: white;
+}
+
+.contenedor{
+    padding: 5rem;
+}
+
+.neon{
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ff00ff,
+    0 0 15px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff;
+    font-size: 2rem
+}
+.login-container{
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width:450px){
+    *{
+        font-size: 1.2rem;
+    }
+}

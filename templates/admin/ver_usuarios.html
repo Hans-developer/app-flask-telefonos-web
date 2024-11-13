@@ -1,0 +1,37 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="container p-4">
+  <center><h1>Lista de administradores</h1></center>
+</div>
+<center>
+  <button class="btn" style="background-color: black; color: aliceblue">
+    <a class="nav-link" href="{{url_for('dashboard')}}">Volver al menu</a>
+  </button>
+</center>
+<br class="p-4" />
+
+{%if usuarios%} {%for i in usuarios%}
+<center>
+  <div class="container p-6">
+    <center><table class="table" BORDER>
+        <tr>
+          <th>ID</th>
+          <th>Usuario</th>
+        </tr>
+        <tr>
+          <td>{{i[0]}}</td>
+          <td>{{i[1]}}</td>
+        </tr>
+      </table>
+    </center>
+  </div>
+</center>
+{%endfor%} 
+
+{%else%}
+
+<div>
+  <center><h2>{{msg}}</h2></center>
+</div>
+{%endif%} 
+{%endblock%}

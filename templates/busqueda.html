@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+
+{%block title%}Buscar{%endblock%}
+
+{%block content%}
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{url_for('index')}}">Bienvenido a PhoneExpress</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('vista_login')}}">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Desarrollado por Hans Saldias - Sistema v1</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    {%block formulario%}
+    <div class="container p-3">
+    <form class="d-grid gap-2 p-3" action="{{url_for('buscar')}}" method="POST">
+      <center><h2 class="h2">Cotiza tu repuesto aqui !</h2></center>
+        <input class="form-control text-center" type="text" id="modelo" name="modelo" placeholder="a30s" required>
+        <input class="form-control btn btn-primary" type="submit" value="Consultar">
+    </form>
+</div>
+
+{%if resultado%}
+<div class="container p-6">
+    <center><H1>Repuestos del modelo</H1></center>
+    <br>
+    <center>
+    {%for i in resultado%}
+    <center>
+      <table class="table" BORDER>
+        <tr>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Repuesto</th>
+          <th>Precio</th>
+        </tr>
+        <tr>
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+          <td>{{i[4]}}</td>
+        </tr>
+      </table>
+    </center>
+    {%endfor%}
+    </center>
+</div>
+{%else%}
+<center>
+    <h1>{{mensaje}}</h1>
+</center>
+{%endif%}
+
+{%endblock%}
+{%endblock%}
+
+
