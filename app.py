@@ -20,8 +20,6 @@ usuario TEXT NOT NULL,
 contrasena TEXT NOT NULL)
 """)
 con.commit()
-cursor.execute("INSERT INTO usuarios (usuario, contrasena) VALUES ("Hans", "H1q2w3e4r."))
-con.commit()
 con.close()
 
 
